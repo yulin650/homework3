@@ -4,7 +4,7 @@
 
 #define SIZE 5
 
-void convert(char *sPtr);
+void printChar(const char *sPtr);
 int bubble(int *);
 
 int main(void)
@@ -15,20 +15,16 @@ int main(void)
 	
 	bubble(a);
 	
-	printf("The string before conversion is:\n %s",string);
-	for(i=0;i<SIZE;i++)
-		printf("%d  ",a[i]);
-	convert(string);
-	printf("\n\nThe string after conversion is:\n %s",string);
+	printf("The string is:\n");
+	printChar(string);
 	for(i=0;i<SIZE;i++)
 		printf("%d  ",a[i]);
 }
 
-void convert(char *sPtr)
+void printChar(const char *sPtr)//一次一個一個字印出字串 
 {
-	while (*sPtr !='\0')
+	for(;*sPtr !='\0';sPtr++)
 	{
-		*sPtr = toupper( *sPtr);
-		++sPtr;
+		printf("%c",*sPtr);
 	}
 } 
